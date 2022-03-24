@@ -10,3 +10,23 @@
 // I -->L
 // G -->Fine
 // L -->Fine
+
+let userAge = prompt("Qual'è la tua età?");
+console.log(userAge);
+
+let userKm = prompt("quanti km vuoi percorrere?");
+console.log(userKm);
+
+let firstPrice = (userKm * 0.21);
+let youngPerCent = (firstPrice * 20 / 100);
+let youngPrice = (firstPrice - youngPerCent);
+let oldPerCent = (firstPrice * 40 / 100);
+let oldPrice = (firstPrice - oldPerCent);
+
+if(userAge < 18){
+   console.log('Questo è il prezzo del tuo biglietto!:', (youngPrice));
+} else if(userAge >= 65){
+    console.log('Questo è il prezzo del tuo biglietto scontato!:', (oldPrice))
+} else {
+    console.log('Questo è il prezzo del tuo biglietto!:', (firstPrice))
+}
