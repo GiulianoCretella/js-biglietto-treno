@@ -18,15 +18,24 @@ let userKm = prompt("quanti km vuoi percorrere?");
 console.log(userKm);
 
 let firstPrice = (userKm * 0.21);
+
+let firstTotalPrice = (Math.round(firstPrice * 100) / 100);
+
 let youngPerCent = (firstPrice * 20 / 100);
 let youngPrice = (firstPrice - youngPerCent);
+let youngTotalPrice = (Math.round(youngPrice * 100) / 100);
+
 let oldPerCent = (firstPrice * 40 / 100);
 let oldPrice = (firstPrice - oldPerCent);
+let oldTotalPrice = (Math.round(oldPrice * 100) / 100);
 
 if(userAge < 18){
-   console.log('Questo è il prezzo del tuo biglietto!:', (youngPrice));
+   document.getElementById('price').innerHTML += ' ' + youngTotalPrice + '€';
+   console.log('il prezzo del biglietto scontato', youngTotalPrice);
 } else if(userAge >= 65){
-    console.log('Questo è il prezzo del tuo biglietto scontato!:', (oldPrice))
+   document.getElementById('price').innerHTML += ' ' + oldTotalPrice + '€';
+   console.log('il prezzo del biglietto scontato', oldTotalPrice);
 } else {
-    console.log('Questo è il prezzo del tuo biglietto!:', (firstPrice))
+   document.getElementById('price').innerHTML += ' ' + firstTotalPrice + '€';
+   console.log('il prezzo del biglietto', firstTotalPrice);
 }
