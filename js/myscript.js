@@ -11,11 +11,21 @@
 // G -->Fine
 // L -->Fine
 
-let userAge = prompt("Qual'è la tua età?");
+let userAge = parseInt(prompt("Qual'è la tua età?"));
 console.log(userAge);
+if (isNaN(userAge)){
+    alert('Inserisci un età valida, ricarica la pagina e ricomincia!');
+} else{
+    console.log('avanti');
+}
 
-let userKm = prompt("quanti km vuoi percorrere?");
+let userKm = parseInt(prompt("quanti km vuoi percorrere?"));
 console.log(userKm);
+if (isNaN(userKm)){
+    alert('Inserisci un chilometraggio valido, ricarica la pagina e ricomincia!');
+} else{
+    console.log('avanti');
+}
 
 let firstPrice = (userKm * 0.21);
 
